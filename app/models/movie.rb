@@ -2,8 +2,7 @@ class Movie < ActiveRecord::Base
 
   has_many :reviews
 
-  validates :title,
-    presence: true
+  validates :title, presence: true
   
   validates :director, 
     presence: true
@@ -19,8 +18,14 @@ class Movie < ActiveRecord::Base
   
   validate :release_date_is_in_the_past
 
+  mount_uploader :image, ImageUploader
+
   def review_average
+    unless reviews.size == 0
       reviews.sum(:rating_out_of_ten)/reviews.size
+    else
+      "ducks"
+    end
   end
   
   protected

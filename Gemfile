@@ -38,3 +38,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+#Use carrierwave for uploading images
+gem 'carrierwave'
+
+#Use rmagick for resizing and scaling images
+gem 'rmagick'
+
